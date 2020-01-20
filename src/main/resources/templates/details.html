@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>GCD Database</title>
+    </head>
+<body>
+<form   th:action="@{/list}" th:object="${osoba}">
+
+    <table>
+
+        <tr>
+            <td>Name</td>
+            <td><input name="name" th:field="*{name}" readonly> </td>
+        </tr>
+        <tr>
+            <td>Nickname</td>
+            <td><input name="nameInGame" th:field="*{nameInGame}" readonly> </td>
+        </tr>
+        <tr>
+            <td>Surname</td>
+            <td> <input name="surname" th:field="*{surname}" readonly> </td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td><input name="date" th:field="*{date}" readonly></td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td><input name="role" th:field="*{role}" readonly></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td><input name="country" th:field="*{country}" readonly></td>
+        </tr>
+        <tr>
+            <td>Socials </td>
+            <td><input type="url" name="social1" th:field="*{social1}" readonly> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="url" name="social2" th:field="*{social2}" readonly> </td>
+        </tr>
+        <tr>
+            <td>Team</td>
+            <td><input name="team" th:field="*{team}" readonly></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" name="id" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input class="btn btn-primary" type="submit" value="back"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

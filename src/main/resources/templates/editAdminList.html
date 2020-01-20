@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+
+        <meta charset="UTF-8">
+        <title>GCD Database</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+<p align="center"> <h2>Players list</h2> <br>
+
+<table  class="table table-hover">
+    <tr><th>Nickname</th><th>Country</th><th>Team</th>
+
+    <tr th:each="wpis: ${osoba}">
+
+        <td th:text="${wpis.nameInGame}">Nickname</td>
+
+        <td th:text="${wpis.country}">Country</td>
+
+        <td th:text="${wpis.team}">Team</td>
+
+            <td>
+                <a href="#" th:href="@{/delete(id=${wpis.id})}" class="btn btn-primary">
+
+                    <i class="fa fa-trash-o fa-lg"></i>Delete</a></td>
+
+
+            <td>
+                <a href="#" th:href="@{/updateList(id=${wpis.id})}" class="btn btn-primary">
+
+                    <i class="fa fa-trash-o fa-lg"></i>Update</a></td>
+
+
+    </tr>
+
+</table>
+
+<table class="table table-striped">
+    <tr><td> Search</td><td><form action="http://localhost:8080/searchAdmin"><input  name="word"><td><input class="btn btn-primary" type="submit"></td></tr>
+</table>
+
+
+
+<form>
+    <table>
+    <td><input class="btn btn-primary" type="submit" formaction="/adminMenu" value="Menu"></td>
+
+    <td colspan="1">
+        <input class="btn btn-primary" type="submit" formaction="/editAdminList" value="List"></td>
+
+    </table>
+
+</form>
+
+
+
+</body>
+</html>

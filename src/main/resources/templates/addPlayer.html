@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GCD Database</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<form action="http://localhost:8080/addPlayer">
+    <table>
+        <tr>
+            <td>Name </td>
+            <td><input name="name" required></td>
+        </tr>
+        <tr>
+            <td>Nickname</td>
+            <td> <input name="nameInGame" required> </td>
+        </tr>
+        <tr>
+            <td>Surname</td>
+            <td> <input name="surname" required> </td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td><input type="date" name="date" required></td>
+        </tr>
+        <tr>
+            <td>Role </td>
+            <td><input name="role" required></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td>
+            <select name="country">
+                <option value="Poland">Poland</option><option value="Germany">Germany</option><option value="England">England</option><option value="Russia">Russia</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Social</td>
+            <td> <input name="social1"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input name="social2"> </td>
+        </tr>
+        <tr>
+            <td>Team</td>
+            <td><input name="team">
+                <input type="checkbox" name="team" value="Not contracted">Not Contracted</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input class="btn btn-primary" type="submit"></td>
+        </tr>
+
+
+    </table>
+    <form>
+        <input class="btn btn-primary" type="submit" formaction="/adminMenu" value="Back" formnovalidate>
+    </form>
+</form>
+</body>
+</html>

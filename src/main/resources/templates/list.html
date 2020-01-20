@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>GCD Database</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+<body>
+<p align="center"> <h2>Players list</h2></p> <br>
+
+<table class="table table-hover">
+    <tr><th>Nickname</th><th>Country</th><th>Team</th>
+
+    <tr th:each="wpis: ${osoba}">
+        <td th:text="${wpis.nameInGame}">Nickname</td>
+
+        <td th:text="${wpis.country}">Country</td>
+
+        <td th:text="${wpis.team}">Team</td>
+
+        <td>
+            <a href="#" th:href="@{/details(id=${wpis.id})}" class="btn btn-primary">
+
+                <i class="fa fa-trash-o fa-lg"></i>Details</a></td>
+
+    <!--
+        <td>
+            <a href="#" th:href="@{/kasuj(id=${wpis.id})}" class="btn btn-danger">
+
+                <i class="fa fa-trash-o fa-lg"></i>Kasuj</a></td>
+
+
+        <td>
+            <a href="#" th:href="@{/przekieruj(id=${wpis.id})}" class="btn btn-primary">
+
+                <i class="fa fa-trash-o fa-lg"></i>Aktualizuj</a></td>
+     -->
+
+    </tr>
+
+</table>
+
+<table class="table table-striped">
+    <tr><td>Search</td><td><form action="http://localhost:8080/search"><input name="word"><td></td><td><input class="btn btn-primary" type="submit"></form></td></tr>
+</table>
+
+<table>
+<form>
+    <td><input class="btn btn-primary" type="submit" formaction="/" value="Menu"></td>
+</form>
+
+<form>
+    <td colspan="1">
+        <input class="btn btn-primary" type="submit" formaction="/list" value="List"></td>
+</form>
+</table>
+
+
+</body>
+</html>
